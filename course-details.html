@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Course Details</title>
+
+    <!-- ✅ Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- ✅ Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/course-details.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+  </head>
+  <body>
+    <!-- ✅ Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">E-Learn</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses.html">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lesson.html">Lessons</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="progress.html">Progress</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="quiz.html">Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="leaderboard.html">Leaderboard</a>
+            </li>
+          </ul>
+
+          <!-- Right Side -->
+          <ul class="navbar-nav ms-auto">
+            <!-- Profile Icon triggers modal -->
+           <!---- <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#profileModal"
+              >
+                <i class="fa-solid fa-user-circle"></i>
+              </a>
+            </li>-->
+
+            <li class="nav-item">
+              <a class="nav-link login-link" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br />
+
+    <div class="container-details">
+      <div id="no-course-msg" class="no-course">
+        <h3 style="color: #007bff; margin: 0 0 8px">No course selected</h3>
+        <p style="margin: 0 0 10px">
+          Please go back to <strong>All Courses</strong> and click
+          <em>Enroll Now</em> for the course you want to view.
+        </p>
+        <p>
+          <a href="courses.html" class="btn-start" style="background: #28a745"
+            >Go to All Courses</a
+          >
+        </p>
+      </div>
+
+      <section
+        class="course-detail-block"
+        id="dynamic-course-content"
+        style="display: none"
+      >
+        <h1 class="course-title" id="detail-title"></h1>
+        <div class="course-media">
+          <img
+            id="detail-image"
+            src="Assets/Images/default.jpg"
+            alt="Course image"
+          />
+        </div>
+
+        <div class="course-description">
+          <h5>Course Description</h5>
+          <p id="detail-description"></p>
+        </div>
+
+        <div class="syllabus">
+          <h5>Syllabus Topics:</h5>
+          <ul id="detail-syllabus-list"></ul>
+        </div>
+
+        <a class="btn-start" href="#">Enroll Now</a>
+      </section>
+    </div>
+
+    <script src="assets/js/course-details.js"></script>
+    <script src="assets/js/courses.js"></script>
+    <!-- Enrollment Form Modal -->
+    <div id="enrollFormModal" class="enroll-form-modal">
+      <div class="enroll-form-content">
+        <span id="closeForm" class="close-btn">&times;</span>
+        <h2>Enroll in this course</h2>
+        <form id="enrollForm">
+          <label for="name">Full Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your full name"
+            required
+          />
+
+          <label for="education">Education:</label>
+          <input
+            type="text"
+            id="education"
+            name="education"
+            placeholder="Your education"
+            required
+          />
+
+          <label for="mobile">Mobile Number:</label>
+          <input
+            type="tel"
+            id="mobile"
+            name="mobile"
+            placeholder="Your mobile number"
+            required
+          />
+
+          <label for="email">Email ID:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your email"
+            required
+          />
+
+          <button type="submit" class="btn-start">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ✅ Footer -->
+    <footer class="custom-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>We provide online learning from anywhere, anytime.</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <a href="#">Home</a>
+            <a href="#">Courses</a>
+            <a href="#">Progress</a>
+            <a href="#">Quiz</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact</h5>
+            <p><i class="fa-solid fa-envelope"></i> support@elearn.com</p>
+            <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+          </div>
+        </div>
+
+        <!-- ✅ Social Media Icons -->
+        <div class="social-icons mb-3">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 E-Learning Platform. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ✅ Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Profile Modal -->
+    <div
+      class="modal fade"
+      id="profileModal"
+      tabindex="-1"
+      aria-labelledby="profileModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="profileModalLabel">User Profile</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body text-center">
+            <img
+              src="https://via.placeholder.com/100"
+              class="rounded-circle mb-3"
+              alt="Profile Picture"
+              width="100"
+              height="100"
+            />
+            <h5 class="mb-1">John Doe</h5>
+            <p class="text-muted mb-2">Male</p>
+            <p><strong>Date of Birth:</strong> 01/01/1990</p>
+            <p><strong>Mobile:</strong> +91 98765 43210</p>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

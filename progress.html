@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- ✅ Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- ✅ Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/progress.css" />
+  </head>
+  <body>
+    <!-- ✅ Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light custom-navbar navbar navbar-expand-lg r"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">E-Learn</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses.html">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lesson.html">Lessons</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="progress.html">Progress</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="quiz.html">Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="leaderboard.html">Leaderboard</a>
+            </li>
+          </ul>
+
+          <!-- Right Side -->
+          <ul class="navbar-nav ms-auto">
+            <!-- Profile Icon triggers modal -->
+           <!----<li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#profileModal"
+              >
+                <i class="fa-solid fa-user-circle"></i>
+              </a>
+            </li>-->
+            <li class="nav-item">
+              <a class="nav-link login-link" href="login.html?active=login">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <h1 class="mb-4">My Progress</h1>
+
+      <h2 class="h4">Overall Course Completion:</h2>
+      <div
+        class="progress mb-5"
+        role="progressbar"
+        aria-label="Course Completion"
+        aria-valuenow="50"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        <div
+          class="progress-bar progress-bar-striped bg-success"
+          style="width: 50%"
+        >
+          50% Completed
+        </div>
+      </div>
+
+      <h2 class="mb-3">Enrolled Courses</h2>
+
+      <ul id="enrolledCoursesList" class="list-group"></ul>
+    </div>
+
+    <!-- ✅ Profile Modal -->
+    <div
+      class="modal fade"
+      id="profileModal"
+      tabindex="-1"
+      aria-labelledby="profileModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="profileModalLabel">User Profile</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body text-center">
+            <img
+              src="https://via.placeholder.com/100"
+              class="rounded-circle mb-3"
+              alt="User Profile Picture"
+              width="100"
+              height="100"
+            />
+            <h5 class="mb-1">John Doe</h5>
+            <p class="text-muted mb-2">Male</p>
+            <p><strong>Date of Birth:</strong> 01/01/1990</p>
+            <p><strong>Mobile:</strong> +91 98765 43210</p>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ Footer -->
+    <footer class="custom-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>We provide online learning from anywhere, anytime.</p>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="progress.html">Progress</a></li>
+              <li><a href="quiz.html">Quiz</a></li>
+              <!-- <li><a href="#">Contact</a></li> -->
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Contact</h5>
+            <p class="d-flex align-items-center mb-2">
+    <i class="fa-solid fa-envelope me-2 text-warning"></i>
+    <a href="mailto:support@elearn.com" class="text-light text-decoration-none">support@elearn.com</a>
+  </p>
+  <!-- Phone -->
+  <p class="d-flex align-items-center mb-0">
+    <i class="fa-solid fa-phone me-2 text-warning"></i>
+    <a href="tel:+919876543210" class="text-light text-decoration-none">+91 98765 43210</a>
+  </p>
+          </div>
+        </div>
+
+        <!-- ✅ Social Media Icons -->
+    <div class="social-icons mb-3">
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+      </div>
+
+        <div class="footer-bottom text-center">
+          Copyright @ Kavya Infoweb Pvt Ltd
+        </div>
+      </div>
+    </footer>
+
+    <!-- ✅ Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/JS/progress.js"></script>
+
+    <script>
+      // ✅ Load enrolled courses from localStorage
+      const enrolledCourses =
+        JSON.parse(localStorage.getItem("enrolledCourses")) || [];
+      const listContainer = document.getElementById("enrolledCoursesList");
+
+      if (enrolledCourses.length === 0) {
+        listContainer.innerHTML = `
+      <li class="list-group-item text-center text-muted">
+        No courses enrolled yet.
+      </li>`;
+      } else {
+        enrolledCourses.forEach((course) => {
+          const li = document.createElement("li");
+          li.className =
+            "list-group-item d-flex justify-content-between align-items-center";
+
+          li.innerHTML = `
+        <div>
+          <img src="${course.image}" width="60" height="40" style="border-radius:5px; margin-right:10px;">
+          <strong>${course.title}</strong>
+        </div>
+        <span class="badge bg-warning text-dark rounded-pill">${course.progress}% Complete</span>
+      `;
+
+          listContainer.appendChild(li);
+        });
+      }
+
+      // ✅ Calculate overall progress
+      let totalProgress = 0;
+      if (enrolledCourses.length > 0) {
+        totalProgress =
+          enrolledCourses.reduce((sum, c) => sum + c.progress, 0) /
+          enrolledCourses.length;
+      }
+
+      // Update overall progress bar (if exists)
+      const bar = document.querySelector(".progress-bar");
+      if (bar) {
+        bar.style.width = totalProgress + "%";
+        bar.textContent = Math.round(totalProgress) + "% Completed";
+      }
+    </script>
+    <script>
+
+  // Get the current page name from the URL
+
+  let currentPage = window.location.pathname.split("/").pop();
+
+  if (currentPage === "") currentPage = "index.html"; // for homepage
+ 
+  // Get all navbar links
+
+  const navLinks = document.querySelectorAll(".nav-link");
+ 
+  navLinks.forEach(link => {
+
+    const href = link.getAttribute("href");
+ 
+    // Match current page with link href
+
+    if (href === currentPage) {
+
+      // Remove text-white and add highlight color
+
+      link.classList.remove("text-white");
+
+      link.classList.add("text-[#ffdd57]", "font-semibold"); // yellow text + bold
+
+    }
+
+  });
+</script>
+
+ 
+  </body>
+</html>

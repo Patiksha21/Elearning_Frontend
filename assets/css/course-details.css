@@ -1,0 +1,283 @@
+/* Navbar */
+.custom-navbar {
+  background-color: #476579 !important; /* Bright Blue */
+  padding: 15px 0;
+}
+.custom-navbar .navbar-brand {
+  color: #fff !important;
+  font-weight: bold;
+  font-size: 22px;
+}
+.custom-navbar .nav-link {
+  color: #fff !important;
+  margin: 0 12px;
+  transition: 0.3s;
+}
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #ffdd57 !important; 
+ 
+}
+
+/* Profile Icon */
+.navbar .fa-user-circle {
+  font-size: 22px;
+  color: #fff;
+  transition: 0.3s;
+}
+.navbar .fa-user-circle:hover {
+  color: #ffdd57; /* Yellow on hover */
+}
+
+/* Login link style */
+.navbar .login-link {
+  font-weight: 600;
+  color: #fff !important;
+  margin-left: 10px;
+  border: 1px solid #ffdd57;
+  border-radius: 20px;
+  padding: 5px 15px;
+  transition: 0.3s;
+}
+.navbar .login-link:hover {
+  background: #ffdd57;
+  color: #000 !important;
+}
+
+.modal-body img {
+  object-fit: cover;
+  border: 2px solid #ffdd57;
+}
+
+
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Course Details Page */
+.course-title {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 25px;
+}
+
+.course-media {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.course-media img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;        /* no fixed height */
+    object-fit: contain; /* shows full image without crop */
+    border-radius: 25px;
+    display: block;
+    margin: 0 auto;
+    background: #f9f9f9; /* adds background gap for smaller images */
+    padding: 10px;
+}
+
+/* Course Description + Syllabus */
+.course-description, .syllabus {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 0 auto 20px;
+    max-width: 650px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.course-description h5, .syllabus h5 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    text-align: left;
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.syllabus ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.syllabus ul li {
+    background: none;
+    border: none;
+    padding: 5px 0;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Start Button */
+.btn-start {
+    display: block;
+    margin: 20px auto 50px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+    width: 200px;
+    font-size: 0.95rem;
+}
+
+.btn-start:hover {
+    background-color: #0056b3;
+}
+/* Enrollment Form Modal */
+.enroll-form-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.enroll-form-content {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.enroll-form-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.enroll-form-content label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.enroll-form-content input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.enroll-form-content .btn-start {
+  display: block;
+  margin: 20px auto 0;
+  width: 140px; /* same width as your buttons */
+  padding: 12px 0;
+  border-radius: 50px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.enroll-form-content .btn-start:hover {
+  background-color: #0056b3; /* darker blue hover */
+}
+
+
+/* Hide details by default */
+.course-detail-block {
+    display: none;
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .course-media img {
+      height: auto;   /* let image height adjust naturally */
+      max-width: 100%;
+  }
+
+  .btn-start {
+      width: 100%;     /* button full width on small screens */
+      max-width: 250px; /* but not too wide */
+  }
+
+  .course-description, .syllabus {
+      padding: 15px;
+      max-width: 95%;  /* fit inside small screen */
+  }
+}
+
+
+
+
+/* Footer */
+.custom-footer {
+  background-color: #3b505f; /* Black footer */
+  color: #ccc;
+  padding: 50px 20px 20px;
+}
+.custom-footer h5 {
+  color: #ffdd57;
+  margin-bottom: 20px;
+}
+.custom-footer a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+}
+.custom-footer a:hover {
+  color: #ffdd57;
+}
+.footer-bottom {
+  border-top: 1px solid #444;
+  margin-top: 20px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Social Icons */
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 0 8px;
+  border-radius: 50%;
+  background: #3d3636;
+  color: #fff;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  background: #ffdd57;
+  color: #000;
+}

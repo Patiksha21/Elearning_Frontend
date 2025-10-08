@@ -1,0 +1,98 @@
+/* Navbar */
+.custom-navbar {
+  background-color: #476579 !important; /* Bright Blue */
+  padding: 15px 0;
+}
+.custom-navbar .navbar-brand {
+  color: #fff !important;
+  font-weight: bold;
+  font-size: 22px;
+}
+.custom-navbar .nav-link {
+  color: #fff !important;
+  margin: 0 12px;
+  transition: 0.3s;
+}
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #ffdd57 !important; 
+ 
+}
+
+/* Profile Icon */
+.navbar .fa-user-circle {
+  font-size: 22px;
+  color: #fff;
+  transition: 0.3s;
+}
+.navbar .fa-user-circle:hover {
+  color: #ffdd57; /* Yellow on hover */
+}
+
+/* Login link style */
+.navbar .login-link {
+  font-weight: 600;
+  color: #fff !important;
+  margin-left: 10px;
+  border: 1px solid #ffdd57;
+  border-radius: 20px;
+  padding: 5px 15px;
+  transition: 0.3s;
+}
+.navbar .login-link:hover {
+  background: #ffdd57;
+  color: #000 !important;
+}
+
+.modal-body img {
+  object-fit: cover;
+  border: 2px solid #ffdd57;
+}
+
+
+
+/* Footer */
+.custom-footer {
+  background-color: #3b505f; /* Black footer */
+  color: #ccc;
+  padding: 50px 20px 20px;
+}
+.custom-footer h5 {
+  color: #ffdd57;
+  margin-bottom: 20px;
+}
+.custom-footer a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+}
+.custom-footer a:hover {
+  color: #ffdd57;
+}
+.footer-bottom {
+  border-top: 1px solid #444;
+  margin-top: 20px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Social Icons */
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 0 8px;
+  border-radius: 50%;
+  background: #3d3636;
+  color: #fff;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  background: #ffdd57;
+  color: #000;
+}

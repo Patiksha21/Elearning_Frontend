@@ -1,0 +1,204 @@
+/* ------------------ Base Styles ------------------ */
+body {
+  color: #f8fafc;
+  font-family: "Inter", sans-serif;
+  /* min-height: 100vh; */
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------ Container ------------------ */
+.container {
+  max-width: 1400px;
+  margin: auto;
+  background-color: #2c3e50; /* Card-like background */
+  padding: 11px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* ------------------ Headings ------------------ */
+h1,
+h2 {
+  color: #38bdf8; /* Accent blue */
+}
+
+h2.h4 {
+  margin-top: 1.5rem;
+}
+
+/* ------------------ Progress Bar ------------------ */
+.progress {
+  height: 2rem;
+  background-color: #334155;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  font-weight: 600;
+  color: #f8fafc;
+  line-height: 2rem;
+  transition: width 1.5s ease-in-out;
+}
+
+/* ------------------ Courses List ------------------ */
+.list-group-item {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border: none;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.list-group-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.badge {
+  font-weight: 600;
+}
+
+/* ------------------ Responsive ------------------ */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+  .progress {
+    height: 1.8rem;
+  }
+}
+
+/* 2nd */
+
+/* ===== NAVBAR ===== */
+
+.custom-navbar .navbar-brand {
+  color: #fff;
+  font-weight: bold;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+  color: #fff;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover,
+.custom-navbar .navbar-nav .nav-link.active {
+  color: #ffd700; /* gold */
+}
+
+/* Login button */
+.login-link {
+  border: 1px solid #ffd700;
+  border-radius: 20px;
+  padding: 5px 15px;
+  color: #ffd700 !important;
+  transition: background 0.3s;
+}
+
+.login-link:hover {
+  background-color: #ffd700;
+  color: #3e5668 !important;
+}
+
+/* ===== FOOTER ===== */
+.custom-footer {
+  color: #ccc;
+  /* padding: 40px 0; */
+}
+
+.custom-footer h5 {
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.custom-footer a {
+  color: #fff;
+  display: block;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.custom-footer a:hover {
+  color: #ffd700;
+}
+
+/* Social Icons */
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 5px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #ffd700;
+  color: #3e5668;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* ===== RESPONSIVE FIXES ===== */
+
+/* Small devices (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Navbar brand center on mobile */
+  .custom-navbar .navbar-brand {
+    margin: auto;
+  }
+
+  /* Make nav links full width */
+  .custom-navbar .navbar-nav .nav-link {
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  .login-link {
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    width: 120px;
+  }
+
+  /* Footer */
+  .custom-footer .row {
+    text-align: center;
+  }
+
+  .custom-footer .col-md-4 {
+    margin-bottom: 20px;
+  }
+
+  .social-icons {
+    margin-top: 15px;
+  }
+}
+
+/* Medium devices (768px - 992px tablets) */
+@media (min-width: 768px) and (max-width: 992px) {
+  .custom-navbar .navbar-nav .nav-link {
+    margin-right: 10px;
+  }
+
+  .custom-footer .row {
+    text-align: center;
+  }
+}

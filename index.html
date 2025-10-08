@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Learning Platform</title>
+  
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/Home.css" />
+</head>
+<body>
+
+  <nav class="bg-[#476579] shadow-md fixed w-full z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <!-- Brand -->
+      <a href="#" class="text-2xl font-bold text-white">E-Learn</a>
+
+      <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-6">
+<li><a href="index.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Home</a></li>
+<li><a href="courses.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Courses</a></li>
+<li><a href="lesson.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Lessons</a></li>
+<li><a href="progress.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Progress</a></li>
+<li><a href="quiz.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Quiz</a></li>
+<li><a href="leaderboard.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Leaderboard</a></li>
+</ul>
+
+      <!-- Right Section: Profile + Login -->
+      <div class="hidden md:flex items-center space-x-4">
+        <!-- Profile Icon -->
+       <!---- <a href="#" class="text-white hover:text-[#ffdd57]">
+          <i class="fa-solid fa-user-circle text-2xl"></i>
+        </a>-->
+
+        <!-- Login Button -->
+        <a href="login.html?active=login"
+   class="login-link bg-transparent text-white border border-[#ffdd57] rounded-full px-4 py-2 hover:bg-[#ffdd57] hover:text-black transition-all font-medium">
+  Login
+</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-white hover:text-[#ffdd57] focus:outline-none">
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#3b505f] px-4 pb-4">
+    <ul class="space-y-2">
+      <li><a href="index.html" class="block text-white hover:text-[#ffdd57] font-medium">Home</a></li>
+      <li><a href="courses.html" class="block text-white hover:text-[#ffdd57] font-medium">Courses</a></li>
+      <li><a href="lesson.html" class="block text-white hover:text-[#ffdd57] font-medium">Lessons</a></li>
+      <li><a href="progress.html" class="block text-white hover:text-[#ffdd57] font-medium">Progress</a></li>
+      <li><a href="quiz.html" class="block text-white hover:text-[#ffdd57] font-medium">Quiz</a></li>
+      <li><a href="leaderboard.html" class="block text-white hover:text-[#ffdd57] font-medium">Leaderboard</a></li>
+      <li>
+        <a href="login.html"
+           class="block text-center text-white border border-[#ffdd57] rounded-full py-2 hover:bg-[#ffdd57] hover:text-black transition font-medium">
+          Login
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+  <!-- ==== Pratiksha’s Middle Content ==== -->
+  <section id="hero" class="relative h-[500px] w-full pt-16">
+    <div class="absolute inset-0">
+      <div class="w-full h-full bg-gradient-to-br from-indigo-900 to-purple-800"></div>
+    </div>
+    <div class="absolute inset-0 z-0 opacity-80 pointer-events-none">
+      <img src="assets/images/Backgrounbannerimage.jpg" alt="E-learning illustration" class="w-full h-full object-cover mix-blend-lighten">
+    </div>
+    <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Welcome to E-Learning Platform</h1>
+      <p class="text-lg md:text-xl text-white mb-6">Learn anywhere, anytime with our online courses.</p>
+      <div class="flex gap-4 flex-wrap justify-center">
+        <a href="courses.html" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">Explore Courses</a>
+       <!---- <a href="courses.html" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition">Enroll Now</a>-->
+      </div>
+    </div>
+  </section>
+
+  
+        
+        
+  <section id="courses" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-3 text-gray-800">Available Courses</h2>
+        <p class="text-gray-600 text-lg">Choose from our most popular programs</p>
+      </div>
+      <div id="courses-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+       
+      </div>
+    </div>
+  </section>
+
+  <section id="instructors" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold mb-3">Meet Our Instructors</h2>
+        <p class="text-gray-600 text-lg">Learn from experienced professionals in the industry.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="bg-gray-50 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <img src="assets/images/professorfirst.jpg" alt="Instructor" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover">
+          <h3 class="text-2xl font-semibold mb-1">Prof. Aarti Sharma</h3>
+          <p class="text-indigo-600 font-medium mb-2">Data Science Expert</p>
+          <p class="text-gray-600">Passionate about teaching data science and mentoring students in Python & ML.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <img src="assets/images/Proffessor1.jpg" alt="Instructor" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover">
+          <h3 class="text-2xl font-semibold mb-1">Prof. Rohan Verma</h3>
+          <p class="text-indigo-600 font-medium mb-2">Frontend Developer</p>
+          <p class="text-gray-600">Expert in building responsive and interactive web applications with React.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <img src="assets/images/professor3.jpg" alt="Instructor" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover">
+          <h3 class="text-2xl font-semibold mb-1">Prof. Sneha Joshi</h3>
+          <p class="text-indigo-600 font-medium mb-2">UI/UX Designer</p>
+          <p class="text-gray-600">Specializes in creating intuitive and user-friendly designs with Figma & Adobe XD.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <img src="assets/images/professor4.jpg" alt="Instructor" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover">
+          <h3 class="text-2xl font-semibold mb-1">Prof. Amit Gupta</h3>
+          <p class="text-indigo-600 font-medium mb-2">Backend Developer</p>
+          <p class="text-gray-600">Expert in Java, Spring Boot, and building scalable backend systems.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <img src="assets/images/proffessor5.jpg" alt="Instructor" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover">
+          <h3 class="text-2xl font-semibold mb-1">Prof. Priya Singh</h3>
+          <p class="text-indigo-600 font-medium mb-2">AI & ML Specialist</p>
+          <p class="text-gray-600">Focuses on deep learning, neural networks, and AI research projects.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <img src="assets/images/professor2.jpg" alt="Instructor" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover">
+          <h3 class="text-2xl font-semibold mb-1">Prof. Kiran Mehta</h3>
+          <p class="text-indigo-600 font-medium mb-2">Cyber Security Expert</p>
+          <p class="text-gray-600">Teaches ethical hacking, network security, and protecting systems from cyber threats.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">Why Choose Us?</h2>
+        <p class="text-gray-600 text-lg">We provide the best online learning experience.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <i class="fas fa-clock text-4xl text-indigo-600 mb-3"></i>
+          <h3 class="text-xl font-bold mb-1">Flexible Learning</h3>
+          <p class="text-gray-600">Learn anytime, anywhere, at your own pace.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <i class="fas fa-chalkboard-teacher text-4xl text-cyan-600 mb-3"></i>
+          <h3 class="text-xl font-bold mb-1">Expert Teachers</h3>
+          <p class="text-gray-600">Learn from industry experts and experienced instructors.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <i class="fas fa-certificate text-4xl text-green-500 mb-3"></i>
+          <h3 class="text-xl font-bold mb-1">Certifications</h3>
+          <p class="text-gray-600">Get verified certificates upon successful course completion.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <i class="fas fa-project-diagram text-4xl text-red-500 mb-3"></i>
+          <h3 class="text-xl font-bold mb-1">Hands-on Projects</h3>
+          <p class="text-gray-600">Apply your knowledge through practical projects.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <i class="fas fa-globe text-4xl text-purple-600 mb-3"></i>
+          <h3 class="text-xl font-bold mb-1">Global Access</h3>
+          <p class="text-gray-600">Learn with peers from around the world.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <i class="fas fa-user-shield text-4xl text-yellow-500 mb-3"></i>
+          <h3 class="text-xl font-bold mb-1">Secure Learning</h3>
+          <p class="text-gray-600">Your data and learning journey is fully secure.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <i class="fas fa-mobile-alt text-4xl text-pink-500 mb-3"></i>
+          <h3 class="text-xl font-bold mb-1">Mobile Friendly</h3>
+          <p class="text-gray-600">Access courses easily from any device.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <i class="fas fa-headset text-4xl text-blue-500 mb-3"></i>
+          <h3 class="text-xl font-bold mb-1">24/7 Support</h3>
+          <p class="text-gray-600">Our team is always here to help you succeed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stats" class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold mb-3">Our Impact</h2>
+        <p class="text-gray-600 text-lg">See how our platform has grown over time.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-4xl font-bold text-indigo-600 mb-2 counter" data-target="5000">0</h3>
+          <p class="text-gray-600">Students</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-4xl font-bold text-cyan-600 mb-2 counter" data-target="120">0</h3>
+          <p class="text-gray-600">Courses</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-4xl font-bold text-green-500 mb-2 counter" data-target="100">0</h3>
+          <p class="text-gray-600">Instructors</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-4xl font-bold text-yellow-500 mb-2 counter" data-target="4.8">0</h3>
+          <p class="text-gray-600">⭐ Average Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <footer class="bg-gray-900 text-white pt-12 pb-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-8 sm:px-12 lg:px-16">
+    
+    <!-- About Section -->
+    <div>
+      <h5 class="font-bold mb-3 text-lg text-amber-400">About Us</h5>
+      <p class="text-gray-300">We provide online learning from anywhere, anytime.</p>
+      <div class="flex gap-4 mt-4 text-xl">
+        <a href="https://www.facebook.com/>" class="bg-gray-700 p-2 rounded-full hover:bg-indigo-400 transition">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/>" class="bg-gray-700 p-2 rounded-full hover:bg-indigo-400 transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/>" class="bg-gray-700 p-2 rounded-full hover:bg-indigo-400 transition">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com/>" class="bg-gray-700 p-2 rounded-full hover:bg-indigo-400 transition">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h5 class="font-bold mb-3 text-lg text-amber-400">Quick Links</h5>
+      <ul class="space-y-1">
+        <li><a href="index.html" class="text-gray-300 hover:text-indigo-400">Home</a></li>
+        <li><a href="courses.html" class="text-gray-300 hover:text-indigo-400">Courses</a></li>
+        <li><a href="progress.html" class="text-gray-300 hover:text-indigo-400">Progress</a></li>
+        <li><a href="quiz.html" class="text-gray-300 hover:text-indigo-400">Quiz</a></li>
+        <!-- <li><a href="#" class="text-gray-300 hover:text-indigo-400">Contact</a></li> -->
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h5 class="font-bold mb-3 text-lg text-amber-400">Contact</h5>
+      <p class="mb-2 flex items-center text-gray-300">
+        <i class="fas fa-envelope mr-2 text-amber-400"></i>
+        <a href="mailto:support@elearn.com" class="hover:text-amber-300">support@elearn.com</a>
+      </p>
+      <p class="flex items-center text-gray-300">
+        <i class="fas fa-phone mr-2 text-amber-400"></i>
+        <a href="tel:+919876543210" class="hover:text-amber-300">+91 98765 43210</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom Line -->
+  <div class="text-center mt-8 text-gray-400 border-t border-gray-700 pt-4">
+    Copyright @ Kavya Infoweb Pvt Ltd
+  </div>
+</footer>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const isLogin = params.get('active') === 'login';
+ 
+  if (isLogin) {
+    const loginLink = document.querySelector('.login-link');
+    if (loginLink) {
+      loginLink.classList.add('active');  // Bootstrap ka class
+    }
+  }
+</script>
+<script>
+
+  // Get the current page name from the URL
+
+  let currentPage = window.location.pathname.split("/").pop();
+
+  if (currentPage === "") currentPage = "index.html"; // for homepage
+ 
+  // Get all navbar links
+
+  const navLinks = document.querySelectorAll(".nav-link");
+ 
+  navLinks.forEach(link => {
+
+    const href = link.getAttribute("href");
+ 
+    // Match current page with link href
+
+    if (href === currentPage) {
+
+      // Remove text-white and add highlight color
+
+      link.classList.remove("text-white");
+
+      link.classList.add("text-[#ffdd57]", "font-semibold"); // yellow text + bold
+
+    }
+
+  });
+</script>
+<script>
+  // Get the current page name from the URL
+  let currentPage = window.location.pathname.split("/").pop();
+  if (currentPage === "") currentPage = "index.html"; // for homepage
+ 
+  // Get all navbar links
+  const navLinks = document.querySelectorAll(".nav-link");
+ 
+  navLinks.forEach(link => {
+    const href = link.getAttribute("href");
+ 
+    // Match current page with link href
+    if (href === currentPage) {
+      // Remove text-white and add highlight color
+      link.classList.remove("text-white");
+      link.classList.add("text-[#ffdd57]", "font-semibold"); // yellow text + bold
+    }
+  });
+</script>
+
+ 
+
+  <script src="assets/js/Home.js"></script>
+</body>
+</html>
