@@ -17,13 +17,16 @@
     <div class="flex justify-between h-16 items-center">
       <a href="#" class="text-2xl font-bold text-white">E-Learn</a>
  
+     
+ 
       <ul class="hidden md:flex space-x-9">
-<li><a href="index.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Home</a></li>
+<li><a href="index.html" class="nav-link text-white hover:text-[#ffdd57] font-medium active">Home</a></li>
 <li><a href="courses.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Courses</a></li>
 <li><a href="lesson.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Lessons</a></li>
 <li><a href="progress.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Progress</a></li>
 <li><a href="quiz.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Quiz</a></li>
 <li><a href="leaderboard.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Leaderboard</a></li>
+ 
 </ul>
  
       <div class="hidden md:flex items-center space-x-6">
@@ -50,21 +53,32 @@
   </div>
  
   <div id="mobile-menu" class="hidden md:hidden bg-[#3b505f] px-4 pb-4">
-    <ul class="space-y-2">
-      <li><a href="index.html" class="block text-white hover:text-[#ffdd57] font-medium">Home</a></li>
-      <li><a href="courses.html" class="block text-white hover:text-[#ffdd57] font-medium">Courses</a></li>
-      <li><a href="lesson.html" class="block text-white hover:text-[#ffdd57] font-medium">Lessons</a></li>
-      <li><a href="progress.html" class="block text-white hover:text-[#ffdd57] font-medium">Progress</a></li>
-      <li><a href="quiz.html" class="block text-white hover:text-[#ffdd57] font-medium">Quiz</a></li>
-      <li><a href="leaderboard.html" class="block text-white hover:text-[#ffdd57] font-medium">Leaderboard</a></li>
-      <li>
-        <a href="login.html"
-           class="block text-center text-white border border-[#ffdd57] rounded-full py-2 hover:bg-[#ffdd57] hover:text-black transition font-medium">
-          Login
-        </a>
-      </li>
-    </ul>
+  <ul class="space-y-2">
+    <li><a href="index.html" class="block text-white hover:text-[#ffdd57] font-medium active">Home</a></li>
+    <li><a href="courses.html" class="block text-white hover:text-[#ffdd57] font-medium">Courses</a></li>
+    <li><a href="lesson.html" class="block text-white hover:text-[#ffdd57] font-medium">Lessons</a></li>
+    <li><a href="progress.html" class="block text-white hover:text-[#ffdd57] font-medium">Progress</a></li>
+    <li><a href="quiz.html" class="block text-white hover:text-[#ffdd57] font-medium">Quiz</a></li>
+    <li><a href="leaderboard.html" class="block text-white hover:text-[#ffdd57] font-medium">Leaderboard</a></li>
+  </ul>
+ 
+  <!-- Profile and Logout for Mobile -->
+  <div class="mt-4 flex flex-col gap-3">
+    <button id="profile-icon-button-mobile" class="flex items-center gap-2 text-white hover:text-[#ffdd57]">
+      <i class="fa-solid fa-user-circle text-2xl"></i> Profile
+    </button>
+ 
+    <button id="logoutBtnMobile" class="flex items-center gap-2 text-white hover:text-[#ffdd57]">
+      <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </button>
   </div>
+ 
+  <a href="login.html"
+     class="block mt-4 text-center text-white border border-[#ffdd57] rounded-full py-2 hover:bg-[#ffdd57] hover:text-black transition font-medium">
+    Login
+  </a>
+</div>
+ 
 </nav>
  
  
@@ -415,6 +429,8 @@
         // hideModal();
       }
     }
+ 
+ 
    
     // Event Listeners for Modal Control
     profileIconButton.addEventListener('click', showModal);
@@ -428,16 +444,82 @@
       }
     });
  
-    // Mobile menu toggle logic
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+    document.addEventListener("DOMContentLoaded", () => {
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
  
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("block");
     });
+  }
+});
+ 
+const profileIconMobile = document.getElementById('profile-icon-button-mobile');
+if(profileIconMobile){
+  profileIconMobile.addEventListener('click', () => {
+    showModal(); // call the same function as desktop
+  });
+}
+ 
+ 
+// Mobile logout button
+const logoutBtnMobile = document.getElementById('logoutBtnMobile');
+if(logoutBtnMobile){
+  logoutBtnMobile.addEventListener('click', () => {
+    localStorage.removeItem('userEmail'); // clear login
+    window.location.href = "index.html";
+  });
+}
+ 
  
   });
 </script>
+ 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+ 
+  const userEmail = localStorage.getItem('userEmail');
+ 
+  // Desktop buttons
+  const logoutBtn = document.getElementById('logoutBtn');
+  const loginLink = document.querySelector('.login-link');
+ 
+  // Mobile buttons
+  const logoutBtnMobile = document.getElementById('logoutBtnMobile');
+  const loginBtnMobile = document.querySelector('#mobile-menu a[href="login.html"]');
+ 
+  // Show/hide based on login state
+  if (userEmail) {
+    if (logoutBtn) logoutBtn.style.display = 'flex';
+    if (logoutBtnMobile) logoutBtnMobile.style.display = 'flex';
+    if (loginLink) loginLink.style.display = 'none';
+    if (loginBtnMobile) loginBtnMobile.style.display = 'none';
+  } else {
+    if (logoutBtn) logoutBtn.style.display = 'none';
+    if (logoutBtnMobile) logoutBtnMobile.style.display = 'none';
+    if (loginLink) loginLink.style.display = 'inline-block';
+    if (loginBtnMobile) loginBtnMobile.style.display = 'block';
+  }
+ 
+  // Logout functionality for both desktop & mobile
+  function logout() {
+    localStorage.removeItem('userEmail');
+    if (logoutBtn) logoutBtn.style.display = 'none';
+    if (logoutBtnMobile) logoutBtnMobile.style.display = 'none';
+    if (loginLink) loginLink.style.display = 'inline-block';
+    if (loginBtnMobile) loginBtnMobile.style.display = 'block';
+    window.location.href = "index.html";
+  }
+ 
+  if (logoutBtn) logoutBtn.addEventListener('click', logout);
+  if (logoutBtnMobile) logoutBtnMobile.addEventListener('click', logout);
+ 
+});
+</script>
+ 
+
  
  
   <script src="assets/js/Home.js"></script>
@@ -446,3 +528,4 @@
   <script src="assets/js/profile.js"></script>
   </body>
 </html>
+ 

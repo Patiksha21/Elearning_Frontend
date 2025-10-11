@@ -1,12 +1,25 @@
- /* 2nd */
+/* ---------------------------------------------------- */
+/* ------------------ Base Styles --------------------- */
+/* ---------------------------------------------------- */
+body {
+  color: #f8fafc;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-/* Navbar */
+/* ---------------------------------------------------- */
+/* ------------------ Navbar Styles ------------------- */
+/* ---------------------------------------------------- */
+
+/* RESTORED: Original desktop padding/style */
 .custom-navbar {
   background-color: #476579 !important; /* Bright Blue */
   padding: 15px 0;
-  padding-left : 40px;
-  padding-right: 40px;
+  padding-left: 40px; /* RESTORED */
+  padding-right: 40px; /* RESTORED */
 }
+
 .custom-navbar .navbar-brand {
   color: #fff !important;
   font-weight: bold;
@@ -19,8 +32,7 @@
 }
 .custom-navbar .nav-link:hover,
 .custom-navbar .nav-link.active {
-  color: #ffdd57 !important; 
- 
+  color: #ffdd57 !important;
 }
 
 /* Profile Icon */
@@ -33,7 +45,7 @@
   color: #ffdd57; /* Yellow on hover */
 }
 
-Login link style
+/* Login link style */
 .navbar .login-link {
   font-weight: 600;
   color: #fff !important;
@@ -48,31 +60,17 @@ Login link style
   color: #000 !important;
 }
 
-.modal-body img {
-  object-fit: cover;
-  border: 2px solid #ffdd57;
-}
-
-/* ------------------ Base Styles ------------------ */
-body {
-  color: #f8fafc;
-  font-family: "Inter", sans-serif;
-  /* min-height: 100vh; */
-  margin: 0;
-  padding: 0;
-}
-
-/* ------------------ Container ------------------ */
+/* ---------------------------------------------------- */
+/* ------------------ Progress Page Styles ------------ */
+/* ---------------------------------------------------- */
 .container {
   max-width: 1400px;
   margin: auto;
-  background-color: #2c3e50; 
+  background-color: #2c3e50;
   padding: 11px;
-
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* ------------------ Headings ------------------ */
 h1,
 h2 {
   color: #38bdf8; /* Accent blue */
@@ -82,7 +80,7 @@ h2.h4 {
   margin-top: 1.5rem;
 }
 
-/* ------------------ Progress Bar ------------------ */
+/* Progress Bar */
 .progress {
   height: 2rem;
   background-color: #334155;
@@ -97,7 +95,7 @@ h2.h4 {
   transition: width 1.5s ease-in-out;
 }
 
-/* ------------------ Courses List ------------------ */
+/* Courses List */
 .list-group-item {
   background-color: #1e293b;
   color: #f8fafc;
@@ -116,38 +114,30 @@ h2.h4 {
   font-weight: 600;
 }
 
-/* ------------------ Responsive ------------------ */
-@media (max-width: 768px) {
-  .container {
-    padding: 1.5rem;
-  }
-  .progress {
-    height: 1.8rem;
-  }
-}
+/* ---------------------------------------------------- */
+/* ------------------ Footer Styles ------------------- */
+/* ---------------------------------------------------- */
 
-
-/* ===== FOOTER ===== */
+/* Footer style to match the Courses page */
 .custom-footer {
- background-color: #476579 !important;
-  /* padding: 40px 0; */
+  background-color: #3b505f !important; /* Darker blue/grey from courses example */
+  color: #ccc;
+  padding: 50px 20px 20px;
 }
-
 .custom-footer h5 {
-  color: #ffd700;
-  margin-bottom: 15px;
+  color: #ffdd57; /* Yellow from courses example */
+  margin-bottom: 20px;
 }
-
 .custom-footer a {
-  color: #fff;
-  display: block;
-  margin-bottom: 8px;
+  color: #ccc;
   text-decoration: none;
+  display: block; /* Make links block for better layout */
+  margin: 5px 0;
   transition: color 0.3s;
 }
 
 .custom-footer a:hover {
-  color: #ffd700;
+  color: #ffdd57;
 }
 
 /* Social Icons */
@@ -156,76 +146,36 @@ h2.h4 {
   width: 40px;
   height: 40px;
   line-height: 40px;
-  margin: 0 5px;
-  background-color: #333;
-  color: #fff;
-  border-radius: 50%;
   text-align: center;
-  transition: background 0.3s, color 0.3s;
+  margin: 0 8px;
+  border-radius: 50%;
+  background: #3d3636; /* Dark background */
+  color: #fff;
+  transition: 0.3s;
 }
-
 .social-icons a:hover {
-  background-color: #ffd700;
-  color: #3e5668;
+  background: #ffdd57;
+  color: #000;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #444; /* Darker border */
   margin-top: 20px;
-  padding-top: 15px;
+  padding-top: 10px;
   text-align: center;
   font-size: 14px;
-  color: #bbb;
+  color: #aaa;
 }
 
-/* ===== RESPONSIVE FIXES ===== */
+/* ---------------------------------------------------- */
+/* ------------------ Profile Modal Styles ------------ */
+/* ---------------------------------------------------- */
 
-/* Small devices (max-width: 768px) */
-@media (max-width: 768px) {
-  /* Navbar brand center on mobile */
-  .custom-navbar .navbar-brand {
-    margin: auto;
-  }
-
-  /* Make nav links full width */
-  .custom-navbar .navbar-nav .nav-link {
-    margin: 5px 0;
-    text-align: center;
-  }
-
-  .login-link {
-    display: block;
-    text-align: center;
-    margin: 10px auto;
-    width: 120px;
-  }
-
-  /* Footer */
-  .custom-footer .row {
-    text-align: center;
-  }
-
-  .custom-footer .col-md-4 {
-    margin-bottom: 20px;
-  }
-
-  .social-icons {
-    margin-top: 15px;
-  }
+.modal-body img {
+  object-fit: cover;
+  border: 2px solid #ffdd57;
 }
 
-/* Medium devices (768px - 992px tablets) */
-@media (min-width: 768px) and (max-width: 992px) {
-  .custom-navbar .navbar-nav .nav-link {
-    margin-right: 10px;
-  }
-
-  .custom-footer .row {
-    text-align: center;
-  }
-}
-
-/* Profile Modal Styling */
 #profileModal .modal-content {
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -233,7 +183,7 @@ h2.h4 {
   overflow: hidden;
   animation: fadeInUp 0.4s ease;
 }
- 
+
 /* Header */
 #profileModal .modal-header {
   background: linear-gradient(135deg, #ffb400, #ff8800);
@@ -242,72 +192,72 @@ h2.h4 {
   text-align: center;
   justify-content: center;
 }
- 
+
 #profileModal .modal-title {
   font-weight: 700;
   font-size: 1.4rem;
   letter-spacing: 0.5px;
 }
- 
+
 #profileModal .btn-close {
   background-color: #fff;
   opacity: 0.9;
 }
- 
+
 #profileModal .btn-close:hover {
   opacity: 1;
 }
- 
+
 /* Body */
 #profileModal .modal-body {
   padding: 25px 20px;
   background-color: #fafafa;
 }
- 
+
 #profileModal img#profilePic {
   border: 3px solid #ffb400;
   box-shadow: 0 4px 12px rgba(255, 180, 0, 0.4);
   transition: transform 0.3s ease;
 }
- 
+
 #profileModal img#profilePic:hover {
   transform: scale(1.05);
 }
- 
+
 #profileModal h5#profileName {
   font-size: 1.3rem;
   font-weight: 700;
 }
- 
+
 #profileModal p {
   font-size: 0.95rem;
   color: #555;
   margin: 5px 0;
 }
- 
+
 #profileModal p strong {
   color: #333;
 }
- 
+
 /* Footer */
 #profileModal .modal-footer {
   background-color: #f8f9fa;
   border-top: none;
   justify-content: center;
 }
- 
+
 #profileModal .btn-secondary {
   border-radius: 30px;
   padding: 8px 20px;
   font-weight: 500;
   transition: background 0.3s ease, color 0.3s ease;
 }
- 
+
 #profileModal .btn-secondary:hover {
   background-color: #ffb400;
   color: #fff;
 }
- 
+
 /* Animation */
 @keyframes fadeInUp {
   from {
@@ -317,5 +267,75 @@ h2.h4 {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* ------------------ Responsive Styles --------------- */
+/* ---------------------------------------------------- */
+
+/* This media query applies to mobile devices when the navbar is expanded (max-width: 992px) */
+@media (max-width: 992px) {
+    
+  /* Fix: Remove the desktop padding when the navbar collapses on mobile */
+  .custom-navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  /* Apply padding/centering to the expanded menu content on mobile */
+  .custom-navbar .navbar-collapse {
+    text-align: center; /* Center content when expanded */
+    padding: 10px 15px; /* Add padding to the expanded menu */
+    margin-top: 10px; /* Add some space below brand/toggler */
+  }
+
+  /* Make nav links full width */
+  .custom-navbar .navbar-nav .nav-link {
+    margin: 5px 0;
+    padding: 8px 0;
+    width: 100%;
+  }
+
+  /* Specific styling for the login button on mobile */
+  .login-link {
+    display: inline-block; /* Make it block/inline-block to center */
+    text-align: center;
+    margin: 10px auto;
+    width: 120px; /* Keep a fixed width for the button */
+  }
+  
+  /* Ensure the right-side nav is also centered/stacked correctly */
+  .custom-navbar .navbar-nav:last-child {
+      margin-top: 10px; /* Space between main links and right-side links */
+      padding-bottom: 10px;
+  }
+
+  /* Footer responsiveness to match the Courses page */
+  .custom-footer .row {
+    text-align: center;
+  }
+
+  .custom-footer .col-md-4 {
+    margin-bottom: 30px; /* Space between columns */
+  }
+  
+  .custom-footer .col-md-4:last-child {
+      margin-bottom: 0;
+  }
+
+  .social-icons {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+/* Small devices (max-width: 768px) for progress content*/
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+  .progress {
+    height: 1.8rem;
   }
 }
