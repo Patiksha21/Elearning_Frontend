@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Error:", error);
         alert("⚠️ Server not reachable. Check if Spring Boot is running.");
       }
+ 
+     
     });
   }
  

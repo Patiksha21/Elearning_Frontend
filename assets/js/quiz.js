@@ -9,10 +9,69 @@ document.addEventListener("DOMContentLoaded", () => {
   const scoreModalEl = document.getElementById("scoreModal");
   const scoreModal = new bootstrap.Modal(scoreModalEl);
  
-  const userDetails = document.querySelector(".user-details"); // 🔹 reference user details div
+  const userDetails = document.querySelector(".user-details");
  
-  if (!slides.length || !quizForm) return;
+  if (!slides.length || !quizForm || !userDetails) return;
  
+  // 🔹 Hide quiz slides and nav buttons initially
+  slides.forEach(slide => slide.style.display = "none");
+  prevBtn.style.display = "none";
+  nextBtn.style.display = "none";
+  submitBtn.style.display = "none";
+ 
+  // 🔹 Add Start Quiz button dynamically
+  const startBtn = document.createElement("button");
+  startBtn.type = "button";
+  startBtn.className = "btn btn-primary w-100 mb-3";
+  startBtn.textContent = "Start Quiz";
+  userDetails.appendChild(startBtn);
+ 
+  // 🔹 On Start Quiz click
+  startBtn.addEventListener("click", () => {
+    const fullName = quizForm.fullName.value.trim();
+    const email = quizForm.email.value.trim();
+    const mobile = quizForm.mobile.value.trim();
+ 
+    // Reset previous styles
+    [quizForm.fullName, quizForm.email, quizForm.mobile].forEach(input => {
+      input.style.borderColor = "#90c2f3";
+    });
+ 
+    let invalidFields = [];
+ 
+    // Full Name Validation
+    if (!fullName || fullName.length < 2) invalidFields.push(quizForm.fullName);
+ 
+    // Email Validation (must contain @ and .)
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailPattern.test(email)) invalidFields.push(quizForm.email);
+ 
+    // Mobile Validation (10 digits only)
+    const mobilePattern = /^[0-9]{10}$/;
+    if (!mobile || !mobilePattern.test(mobile)) invalidFields.push(quizForm.mobile);
+ 
+    if (invalidFields.length > 0) {
+      invalidFields.forEach(input => input.style.borderColor = "red");
+      invalidFields[0].focus();
+ 
+      let messages = [];
+      if (invalidFields.includes(quizForm.fullName)) messages.push("- Enter a valid full name (at least 2 characters).");
+      if (invalidFields.includes(quizForm.email)) messages.push("- Enter a valid email (example@mail.com).");
+      if (invalidFields.includes(quizForm.mobile)) messages.push("- Enter a valid 10-digit mobile number.");
+ 
+      alert("⚠️ Please fix the following before starting the quiz:\n" + messages.join("\n"));
+      return;
+    }
+ 
+    // 🔹 Hide user details, show first quiz slide & navigation
+    userDetails.style.display = "none";
+    slides[currentSlide].style.display = "block";
+    prevBtn.style.display = "none";
+    nextBtn.style.display = slides.length > 1 ? "inline-block" : "none";
+    submitBtn.style.display = slides.length === 1 ? "inline-block" : "none";
+  });
+ 
+  // 🔹 Correct answers
   const correctAnswers = {
     q1: "extends",
     q2: "main()",
@@ -36,18 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
     q20: "final"
   };
  
-  showSlide(currentSlide);
- 
   function showSlide(n) {
-    slides.forEach((slide, index) => slide.classList.toggle("active", index === n));
+    slides.forEach((slide, index) => {
+      slide.style.display = index === n ? "block" : "none";
+    });
     prevBtn.style.display = n === 0 ? "none" : "inline-block";
     nextBtn.style.display = n === slides.length - 1 ? "none" : "inline-block";
     submitBtn.style.display = n === slides.length - 1 ? "inline-block" : "none";
- 
-    // 🔹 Show user details only on first slide
-    if(userDetails) {
-      userDetails.style.display = n === 0 ? "block" : "none";
-    }
   }
  
   prevBtn.addEventListener("click", () => {
@@ -90,4 +144,19 @@ document.addEventListener("DOMContentLoaded", () => {
  
     scoreModal.show();
   });
+ 
+  // 🔹 Make entire .form-check div clickable
+  document.querySelectorAll(".form-check").forEach(option => {
+    option.addEventListener("click", (e) => {
+      if (e.target.tagName !== "INPUT") {
+        const radio = option.querySelector('input[type="radio"]');
+        if (radio) {
+          radio.checked = true;
+          radio.dispatchEvent(new Event('change'));
+        }
+      }
+    });
+  });
+ 
 });
+ 

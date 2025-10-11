@@ -4,22 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>E-Learning Platform</title>
-  
-
+ 
+ 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="assets/css/Home.css" />
 </head>
 <body>
-
+ 
   <nav class="bg-[#476579] shadow-md fixed w-full z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16 items-center">
-      <!-- Brand -->
       <a href="#" class="text-2xl font-bold text-white">E-Learn</a>
-
-      <!-- Desktop Menu -->
-    <ul class="hidden md:flex space-x-6">
+ 
+      <ul class="hidden md:flex space-x-9">
 <li><a href="index.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Home</a></li>
 <li><a href="courses.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Courses</a></li>
 <li><a href="lesson.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Lessons</a></li>
@@ -27,22 +25,22 @@
 <li><a href="quiz.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Quiz</a></li>
 <li><a href="leaderboard.html" class="nav-link text-white hover:text-[#ffdd57] font-medium">Leaderboard</a></li>
 </ul>
-
-      <!-- Right Section: Profile + Login -->
-      <div class="hidden md:flex items-center space-x-4">
-        <!-- Profile Icon -->
-       <!---- <a href="#" class="text-white hover:text-[#ffdd57]">
+ 
+      <div class="hidden md:flex items-center space-x-6">
+        <button id="profile-icon-button" class="text-white hover:text-[#ffdd57] transition focus:outline-none">
           <i class="fa-solid fa-user-circle text-2xl"></i>
-        </a>-->
-
-        <!-- Login Button -->
+        </button>
+ 
         <a href="login.html?active=login"
    class="login-link bg-transparent text-white border border-[#ffdd57] rounded-full px-4 py-2 hover:bg-[#ffdd57] hover:text-black transition-all font-medium">
   Login
 </a>
+ 
+<a class="nav-link text-white-400 hover:text-white-300 transition" href="index.html" id="logoutBtn">
+      <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </a>
       </div>
-
-      <!-- Mobile Menu Button -->
+ 
       <div class="md:hidden">
         <button id="mobile-menu-button" class="text-white hover:text-[#ffdd57] focus:outline-none">
           <i class="fa-solid fa-bars text-2xl"></i>
@@ -50,8 +48,7 @@
       </div>
     </div>
   </div>
-
-  <!-- Mobile Menu -->
+ 
   <div id="mobile-menu" class="hidden md:hidden bg-[#3b505f] px-4 pb-4">
     <ul class="space-y-2">
       <li><a href="index.html" class="block text-white hover:text-[#ffdd57] font-medium">Home</a></li>
@@ -69,9 +66,8 @@
     </ul>
   </div>
 </nav>
-
-
-  <!-- ==== Pratiksha’s Middle Content ==== -->
+ 
+ 
   <section id="hero" class="relative h-[500px] w-full pt-16">
     <div class="absolute inset-0">
       <div class="w-full h-full bg-gradient-to-br from-indigo-900 to-purple-800"></div>
@@ -84,14 +80,13 @@
       <p class="text-lg md:text-xl text-white mb-6">Learn anywhere, anytime with our online courses.</p>
       <div class="flex gap-4 flex-wrap justify-center">
         <a href="courses.html" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">Explore Courses</a>
-       <!---- <a href="courses.html" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition">Enroll Now</a>-->
-      </div>
+       </div>
     </div>
   </section>
-
-  
-        
-        
+ 
+ 
+       
+       
   <section id="courses" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14">
@@ -103,7 +98,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section id="instructors" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
@@ -150,7 +145,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section id="why-us" class="py-16 bg-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
@@ -201,7 +196,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section id="stats" class="py-20 bg-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
@@ -228,11 +223,10 @@
       </div>
     </div>
   </section>
-
+ 
  <footer class="bg-gray-900 text-white pt-12 pb-6">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-8 sm:px-12 lg:px-16">
-    
-    <!-- About Section -->
+   
     <div>
       <h5 class="font-bold mb-3 text-lg text-amber-400">About Us</h5>
       <p class="text-gray-300">We provide online learning from anywhere, anytime.</p>
@@ -251,8 +245,7 @@
         </a>
       </div>
     </div>
-
-    <!-- Quick Links -->
+ 
     <div>
       <h5 class="font-bold mb-3 text-lg text-amber-400">Quick Links</h5>
       <ul class="space-y-1">
@@ -260,11 +253,9 @@
         <li><a href="courses.html" class="text-gray-300 hover:text-indigo-400">Courses</a></li>
         <li><a href="progress.html" class="text-gray-300 hover:text-indigo-400">Progress</a></li>
         <li><a href="quiz.html" class="text-gray-300 hover:text-indigo-400">Quiz</a></li>
-        <!-- <li><a href="#" class="text-gray-300 hover:text-indigo-400">Contact</a></li> -->
       </ul>
     </div>
-
-    <!-- Contact -->
+ 
     <div>
       <h5 class="font-bold mb-3 text-lg text-amber-400">Contact</h5>
       <p class="mb-2 flex items-center text-gray-300">
@@ -277,75 +268,181 @@
       </p>
     </div>
   </div>
-
-  <!-- Bottom Line -->
+ 
   <div class="text-center mt-8 text-gray-400 border-t border-gray-700 pt-4">
     Copyright @ Kavya Infoweb Pvt Ltd
   </div>
 </footer>
+ 
+<div id="profile-modal" class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-[9999] hidden transition-opacity duration-300 ease-out" aria-labelledby="profileModalLabel" aria-modal="true" role="dialog">
+  <div class="bg-white rounded-lg shadow-xl w-full max-w-sm m-4 transform transition-all sm:my-8 sm:align-middle sm:p-6">
+    <div class="px-4 py-4 sm:px-6 border-b border-gray-200 flex justify-between items-center">
+      <h3 class="text-lg font-semibold leading-6 text-gray-900" id="profileModalLabel">User Profile</h3>
+      <button type="button" id="close-modal-button-header" class="text-gray-400 hover:text-gray-500 transition focus:outline-none">
+        <span class="sr-only">Close modal</span>
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+ 
+    <div class="p-6 text-center">
+      <img id="profilePic"
+           src="./assets/images/profile-imagelatest.png"
+           class="mx-auto rounded-full mb-4 w-24 h-24 object-cover"
+           alt="Profile Picture">
+ 
+      <h5 id="profileName" class="text-xl font-bold mb-1 text-indigo-600">Loading...</h5>
+ 
+      <p id="profileEmail" class="text-gray-500 mb-4">Loading...</p>
+ 
+      <div class="space-y-2 text-left inline-block">
+        <p class="text-gray-700">
+          <strong class="font-medium">Gender:</strong>
+          <span id="profileGender">Loading...</span>
+        </p>
+        <p class="text-gray-700">
+          <strong class="font-medium">Date of Birth:</strong>
+          <span id="profileDob">Loading...</span>
+        </p>
+        <p class="text-gray-700">
+          <strong class="font-medium">Mobile:</strong>
+          <span id="profileMobile">Loading...</span>
+        </p>
+      </div>
+    </div>
+ 
+    <div class="px-4 py-3 sm:px-6 bg-gray-50 flex justify-end rounded-b-lg">
+      <button type="button" id="close-modal-button-footer" class="inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+ 
+ 
 <script>
+  // Script for setting 'active' class on login link from URL parameter
   const params = new URLSearchParams(window.location.search);
   const isLogin = params.get('active') === 'login';
  
   if (isLogin) {
     const loginLink = document.querySelector('.login-link');
     if (loginLink) {
-      loginLink.classList.add('active');  // Bootstrap ka class
+      // Custom class logic here if needed
     }
   }
 </script>
 <script>
-
-  // Get the current page name from the URL
-
+  // Script for highlighting active navigation link
   let currentPage = window.location.pathname.split("/").pop();
-
-  if (currentPage === "") currentPage = "index.html"; // for homepage
+  if (currentPage === "") currentPage = "index.html";
  
-  // Get all navbar links
-
   const navLinks = document.querySelectorAll(".nav-link");
  
   navLinks.forEach(link => {
-
     const href = link.getAttribute("href");
  
-    // Match current page with link href
-
     if (href === currentPage) {
-
-      // Remove text-white and add highlight color
-
       link.classList.remove("text-white");
-
-      link.classList.add("text-[#ffdd57]", "font-semibold"); // yellow text + bold
-
+      link.classList.add("text-[#ffdd57]", "font-semibold");
     }
-
   });
 </script>
+ 
 <script>
-  // Get the current page name from the URL
-  let currentPage = window.location.pathname.split("/").pop();
-  if (currentPage === "") currentPage = "index.html"; // for homepage
- 
-  // Get all navbar links
-  const navLinks = document.querySelectorAll(".nav-link");
- 
-  navLinks.forEach(link => {
-    const href = link.getAttribute("href");
- 
-    // Match current page with link href
-    if (href === currentPage) {
-      // Remove text-white and add highlight color
-      link.classList.remove("text-white");
-      link.classList.add("text-[#ffdd57]", "font-semibold"); // yellow text + bold
+  document.addEventListener("DOMContentLoaded", () => {
+    const profileIconButton = document.getElementById('profile-icon-button');
+    const profileModal = document.getElementById('profile-modal');
+    const closeModalHeaderButton = document.getElementById('close-modal-button-header');
+    const closeModalFooterButton = document.getElementById('close-modal-button-footer');
+   
+    // Helper function to hide the modal
+    function hideModal() {
+      profileModal.classList.add('hidden');
     }
+ 
+    // Helper function to show the modal and fetch data
+    async function showModal() {
+      profileModal.classList.remove('hidden');
+     
+      const email = localStorage.getItem("userEmail");
+ 
+      // Reset fields to 'Loading...' immediately upon opening
+      document.getElementById("profileName").textContent = "Loading...";
+      document.getElementById("profileEmail").textContent = "Loading...";
+      document.getElementById("profileGender").textContent = "Loading...";
+      document.getElementById("profileDob").textContent = "Loading...";
+      document.getElementById("profileMobile").textContent = "Loading...";
+ 
+ 
+      if (!email) {
+        alert("User not logged in ❌ Please log in to view your profile");
+        hideModal(); // Hide modal if not logged in
+        window.location.href = "login.html";
+        return;
+      }
+ 
+      try {
+        // ✅ ACTUAL DATA FETCH: Using the provided backend endpoint
+        const response = await fetch(`https://elearningbackend-production-9496.up.railway.app/api/profile/${encodeURIComponent(email)}`);
+       
+        if (!response.ok) {
+            // Handle HTTP errors (e.g., 404 User Not Found, 500 Server Error)
+            const errorText = await response.text();
+            throw new Error(`Failed to fetch profile: ${response.status} ${response.statusText}. Detail: ${errorText}`);
+        }
+       
+        const user = await response.json();
+ 
+ 
+        // Update profile fields with fetched data
+        document.getElementById("profileName").textContent = user.fullName || "Not available";
+        document.getElementById("profileEmail").textContent = user.email || "Not available";
+        document.getElementById("profileGender").textContent = user.gender || "Not available";
+        document.getElementById("profileDob").textContent = user.dob || "Not available";
+        document.getElementById("profileMobile").textContent = user.mobile || "Not available";
+       
+        // Update profile picture if the endpoint returns a URL
+        if (user.profilePictureUrl) {
+            document.getElementById("profilePic").src = user.profilePictureUrl;
+        }
+ 
+      } catch (error) {
+        console.error("Error loading profile:", error);
+        alert("Unable to load profile data ❌. Check server and CORS configuration.");
+        // Optional: Keep the modal open with the error message or hide it
+        // hideModal();
+      }
+    }
+   
+    // Event Listeners for Modal Control
+    profileIconButton.addEventListener('click', showModal);
+    closeModalHeaderButton.addEventListener('click', hideModal);
+    closeModalFooterButton.addEventListener('click', hideModal);
+ 
+    // Close modal when clicking outside the modal content (on the backdrop)
+    profileModal.addEventListener('click', (e) => {
+      if (e.target === profileModal) {
+        hideModal();
+      }
+    });
+ 
+    // Mobile menu toggle logic
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+ 
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+ 
   });
 </script>
-
  
-
+ 
   <script src="assets/js/Home.js"></script>
-</body>
+  <script src="assets/js/logout.js"></script>
+  <script src="assets/js/login.js"></script>
+  <script src="assets/js/profile.js"></script>
+  </body>
 </html>

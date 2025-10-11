@@ -105,3 +105,152 @@ section {
   scroll-margin-top: 80px; /* for anchor links */
 }
 
+
+/* 🔸 Overlay background */
+#profile-modal {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+ 
+/* 🔸 Modal box */
+#profile-modal > div {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 0.4s ease;
+  transform-origin: center;
+  background-color: #fff;
+}
+ 
+/* 🔸 Header */
+#profile-modal .border-b {
+  background: linear-gradient(135deg, #ffa500, #ff8800);
+  color: #fff;
+  border: none !important;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 20px 20px 0 0;
+  padding: 1rem;
+}
+ 
+/* Header title */
+#profile-modal h3#profileModalLabel {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.4px;
+}
+ 
+/* Close button (white circle with X) */
+#profile-modal #close-modal-button-header {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  background: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+ 
+#profile-modal #close-modal-button-header:hover {
+  background: #ffb400;
+}
+ 
+#profile-modal #close-modal-button-header svg {
+  height: 18px;
+  width: 18px;
+  stroke: #333;
+}
+ 
+/* 🔸 Body */
+#profile-modal .p-6.text-center {
+  background-color: #fff;
+}
+ 
+#profile-modal img#profilePic {
+  border: 3px solid #ffa500;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.4);
+  border-radius: 50%;
+  width: 100px;
+  height:100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+ 
+#profile-modal img#profilePic:hover {
+  transform: scale(1.05);
+}
+ 
+/* Profile name */
+#profile-modal h5#profileName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 2px;
+}
+ 
+/* Email */
+#profile-modal p#profileEmail {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+ 
+/* Details section */
+#profile-modal .space-y-2.text-left.inline-block {
+  text-align: center !important;
+  display: block;
+  margin: 0 auto;
+  color: #333;
+}
+ 
+#profile-modal .text-gray-700 strong {
+  color: #000;
+  font-weight: 600;
+}
+ 
+/* 🔸 Footer */
+#profile-modal .bg-gray-50 {
+  background-color: #f3f4f6 !important;
+  border-top: none;
+  display: flex;
+  justify-content: center;
+  border-radius: 0 0 20px 20px;
+}
+ 
+/* Close button */
+#profile-modal #close-modal-button-footer {
+  background-color: #5a5a5a;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 24px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+ 
+#profile-modal #close-modal-button-footer:hover {
+  background-color: #ff8800;
+  transform: scale(1.05);
+}
+ 
+/* 🔸 Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+ 

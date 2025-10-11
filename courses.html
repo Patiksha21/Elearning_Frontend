@@ -18,7 +18,7 @@
 <body>
 
   <!-- ✅ Navbar -->
-  <nav class="navbar navbar-expand-lg custom-navbar">
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">E-Learn</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -28,7 +28,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="lesson.html">Lessons</a></li>
+          <li class="nav-item"><a class="nav-link " href="lesson.html">Lessons</a></li>
           <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
           <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
           <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
@@ -39,17 +39,23 @@
         <!-- Right Side -->
       <ul class="navbar-nav ms-auto">
         <!-- Profile Icon triggers modal -->
-<!--<li class="nav-item">
+<li class="nav-item">
   <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#profileModal">
     <i class="fa-solid fa-user-circle"></i>
   </a>
-</li>-->
+</li>
 
         <li class="nav-item">
           <a class="nav-link login-link" href="login.html?active=login">Login</a>
         </li>
+        
+        <li class="nav-item">
+    <a class="nav-link text-danger" href="#" id="logoutBtn">
+      <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </a>
+  </li>
       </ul>
-
+            
       </div>
     </div>
   </nav>
@@ -115,7 +121,7 @@
   <!-- ✅ Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Profile Modal -->
+  <!-- Profile Modal
 <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -139,10 +145,55 @@
 
     </div>
   </div>
+</div> -->
+
+<!-- Profile Modal -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+ 
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="profileModalLabel">User Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+ 
+      <!-- Modal Body -->
+      <div class="modal-body text-center">
+  <!-- Profile Picture -->
+  <img id="profilePic" src="./assets/images/profile-imagelatest.png"
+       class="rounded-circle mb-3"
+       alt="Profile Picture" width="100" height="100">
+ 
+  <!-- Full Name -->
+  <h5 id="profileName" class="mb-1 text-primary">Loading...</h5>
+ 
+  <!-- Email -->
+  <p id="profileEmail" class="text-muted mb-0">Loading...</p>
+ 
+  <!-- Gender, DOB, Mobile -->
+  <p><strong>Gender:</strong> <span id="profileGender">Loading...</span></p>
+  <p><strong>Date of Birth:</strong> <span id="profileDob">Loading...</span></p>
+  <p><strong>Mobile:</strong> <span id="profileMobile">Loading...</span></p>
 </div>
+ 
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+ 
+    </div>
+  </div>
+</div>
+ 
 
 <script src="assets/js/courses.js"></script>
 <script src="assets/js/course-details.js"></script>
+<script src="assets/js/profile.js"></script>
+<script src="assets/js/login.js"></script>
+
+
+
 <script>
 
   // Get the current page name from the URL
