@@ -253,4 +253,26 @@ section {
     opacity: 1;
   }
 }
+
+.social-icons {
+  justify-content: center;
+}
+ 
+.icon-link {
+  background-color: #222; /* Light black background */
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%; /* Circular shape */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+ 
+.icon-link:hover {
+  background-color: #ffdd57; /* Yellow on hover */
+  color: #000; /* Black icon for contrast */
+  transform: translateY(-3px); /* Slight hover lift */
+}
+ 
  

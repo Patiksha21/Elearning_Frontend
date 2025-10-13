@@ -207,6 +207,14 @@ h1 {
     margin: auto;
   }
 
+   .navbar-nav {     /* change */
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+  }
+ 
+
   /* Make nav links full width */
   .custom-navbar .navbar-nav .nav-link {
     margin: 5px 0;

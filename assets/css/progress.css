@@ -59,6 +59,11 @@ body {
   background: #ffdd57;
   color: #000 !important;
 }
+.navbar-nav {
+  /* change */
+  display: flex;
+  justify-content: center;
+}
 
 /* ---------------------------------------------------- */
 /* ------------------ Progress Page Styles ------------ */
@@ -281,6 +286,14 @@ h2.h4 {
   .custom-navbar {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .navbar-nav {
+    /* change */
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
   }
   
   /* Apply padding/centering to the expanded menu content on mobile */

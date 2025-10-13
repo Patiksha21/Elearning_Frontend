@@ -5,29 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leaderboard</title>
   <link rel="stylesheet" href="./assets/css/leaderboard.css">
-
+ 
   <!--Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+ 
  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
+ 
+ 
   <!-- Font Awesome for medals -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+ 
 </head>
-
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
 <!-- Navbar -->
   <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">E-Learn</a>
+ 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+  <span class="navbar-toggler-icon"></span>
+</button>
+ 
+     
+        <div class="collapse navbar-collapse" id="navbarNav">
+ 
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
@@ -51,7 +56,7 @@
         <li class="nav-item">
    <a class="nav-link login-link" href="login.html?active=login">Login</a>
         </li>
-
+ 
         <li class="nav-item">
     <a class="nav-link text-danger" href="#" id="logoutBtn">
       <i class="fa-solid fa-right-from-bracket"></i> Logout
@@ -64,14 +69,14 @@
   </nav>
  
 <body class="bg-light">
-
+ 
 <section class="leaderboard">
   <div class="container" style="background: url('./assets/images/background.jpg') no-repeat center center; background-size: cover;">
     <h1 class="heading-1"><i class="fa-solid fa-trophy"></i> Our Rankers</h1>
-
+ 
     <h2 class="heading-2"> Congratulations</h2>
     <h4 class="heading-3">to our students for such an amazing performance</h4>
-    
+   
     <div class="rankers">
       <!-- Ranker 1 -->
       <div class="ranker-1 gold">
@@ -80,7 +85,7 @@
         <div class="name">Vijay Pathak</div>
         <div class="score" data-percent="98">0%</div>
       </div>
-
+ 
       <!-- Ranker 2 -->
       <div class="ranker-1 silver">
         <div class="rank"><i class="fa-solid fa-medal"></i> 2</div>
@@ -88,7 +93,7 @@
         <div class="name">Riya Sharma</div>
         <div class="score" data-percent="95">0%</div>
       </div>
-
+ 
       <!-- Ranker 3 -->
       <div class="ranker-1 bronze">
         <div class="rank"><i class="fa-solid fa-medal"></i> 3</div>
@@ -96,7 +101,7 @@
         <div class="name">Akshay Patil</div>
         <div class="score" data-percent="91">0%</div>
       </div>
-
+ 
       <!-- Ranker 4 -->
       <div class="ranker-1">
         <div class="rank"><i class="fa-solid fa-medal"></i> 4</div>
@@ -104,7 +109,7 @@
         <div class="name">Priya Deshmukh</div>
         <div class="score" data-percent="89">0%</div>
       </div>
-
+ 
       <!-- Ranker 5 -->
       <div class="ranker-1">
         <div class="rank"><i class="fa-solid fa-medal"></i> 5</div>
@@ -112,7 +117,7 @@
         <div class="name">Arjun Mehta</div>
         <div class="score" data-percent="87">0%</div>
       </div>
-
+ 
       <!-- Ranker 6 -->
       <div class="ranker-1">
         <div class="rank"><i class="fa-solid fa-medal"></i> 6</div>
@@ -123,14 +128,21 @@
     </div>
   </div>
 </section>
-
-
+ 
+ 
 <footer class="custom-footer">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
           <h5>About Us</h5>
           <p>We provide online learning from anywhere,<br> anytime.</p>
+           <!-- Social Media Icons -->
+         <div class="social-icons mb-3">
+          <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+        </div>
         </div>
         <div class="col-md-4">
           <h5>Quick Links</h5>
@@ -143,36 +155,28 @@
         <div class="col-md-4">
           <h5>Contact</h5>
        <!-- Email -->
-  <p class="d-flex align-items-center mb-2">
-    <i class="fa-solid fa-envelope me-2 text-warning"></i>
-    <a href="mailto:support@elearn.com" class="text-light text-decoration-none">support@elearn.com</a>
+  <a href="mailto:support@elearn.com">
+            <i class="fa-solid fa-envelope"></i> support@elearn.com
+          </a>
+             <br>
+         <a href="tel:+919876543210">
+         <i class="fa-solid fa-phone"></i> +91 98765 43210
+        </a>
   </p>
-  <!-- Phone -->
-  <p class="d-flex align-items-center mb-0">
-    <i class="fa-solid fa-phone me-2 text-warning"></i>
-    <a href="tel:+919876543210" class="text-light text-decoration-none">+91 98765 43210</a>
-  </p>
-
+ 
         </div>
       </div>
  
-           <!-- Social Media Icons -->
-         <div class="social-icons mb-3">
-          <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-        </div>
+           
  
       <div class="footer-bottom">
        Copyright @ Kavya Infoweb Pvt Ltd
       </div>
     </div>
   </footer>
-
+ 
   <!-- ✅ Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+ 
   <!-- Profile Modal -->
 <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -230,37 +234,39 @@
   });
 </script>
 <script>
-
+ 
   // Get the current page name from the URL
-
+ 
   let currentPage = window.location.pathname.split("/").pop();
-
+ 
   if (currentPage === "") currentPage = "index.html"; // for homepage
  
   // Get all navbar links
-
+ 
   const navLinks = document.querySelectorAll(".nav-link");
  
   navLinks.forEach(link => {
-
+ 
     const href = link.getAttribute("href");
  
     // Match current page with link href
-
+ 
     if (href === currentPage) {
-
+ 
       // Remove text-white and add highlight color
-
+ 
       link.classList.remove("text-white");
-
+ 
       link.classList.add("text-[#ffdd57]", "font-semibold"); // yellow text + bold
-
+ 
     }
-
+ 
   });
 </script>
-
  
-
+ 
+ 
 </body>
 </html>
+ 
+ 

@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const scoreValue = document.getElementById("scoreValue");
   const scoreModalEl = document.getElementById("scoreModal");
   const scoreModal = new bootstrap.Modal(scoreModalEl);
- 
   const userDetails = document.querySelector(".user-details");
  
   if (!slides.length || !quizForm || !userDetails) return;
@@ -20,33 +19,42 @@ document.addEventListener("DOMContentLoaded", () => {
   submitBtn.style.display = "none";
  
   // 🔹 Add Start Quiz button dynamically
-  const startBtn = document.createElement("button");
-  startBtn.type = "button";
-  startBtn.className = "btn btn-primary w-100 mb-3";
-  startBtn.textContent = "Start Quiz";
-  userDetails.appendChild(startBtn);
+const startBtn = document.createElement("button");
+startBtn.type = "button";
+startBtn.className = "btn btn-primary w-100 mb-3";
+startBtn.textContent = "Start Quiz";
  
-  // 🔹 On Start Quiz click
+// 🔹 Add Back to Home button dynamically
+const backBtn = document.createElement("button");
+backBtn.type = "button";
+backBtn.className = "btn btn-secondary w-100 mb-3";
+backBtn.textContent = "Back to Home";
+ 
+// 🔹 Append buttons
+userDetails.appendChild(backBtn);
+userDetails.appendChild(startBtn);
+ 
+// 🔹 Back to Home click event
+backBtn.addEventListener("click", () => {
+  window.location.href = "index.html"; // redirect to home page
+});
+ 
+ 
+  // 🔹 Start Quiz Validation
   startBtn.addEventListener("click", () => {
     const fullName = quizForm.fullName.value.trim();
     const email = quizForm.email.value.trim();
     const mobile = quizForm.mobile.value.trim();
  
-    // Reset previous styles
     [quizForm.fullName, quizForm.email, quizForm.mobile].forEach(input => {
       input.style.borderColor = "#90c2f3";
     });
  
     let invalidFields = [];
  
-    // Full Name Validation
     if (!fullName || fullName.length < 2) invalidFields.push(quizForm.fullName);
- 
-    // Email Validation (must contain @ and .)
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailPattern.test(email)) invalidFields.push(quizForm.email);
- 
-    // Mobile Validation (10 digits only)
     const mobilePattern = /^[0-9]{10}$/;
     if (!mobile || !mobilePattern.test(mobile)) invalidFields.push(quizForm.mobile);
  
@@ -63,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
  
-    // 🔹 Hide user details, show first quiz slide & navigation
     userDetails.style.display = "none";
     slides[currentSlide].style.display = "block";
     prevBtn.style.display = "none";
@@ -71,30 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtn.style.display = slides.length === 1 ? "inline-block" : "none";
   });
  
-  // 🔹 Correct answers
+  // 🔹 Correct Answers
   const correctAnswers = {
-    q1: "extends",
-    q2: "main()",
-    q3: "String",
-    q4: "Overloading",
-    q5: "final",
-    q6: "java.lang",
-    q7: "false",
-    q8: "Map",
-    q9: "friendly",
-    q10: "ArithmeticException",
-    q11: "break",
-    q12: "equals()",
-    q13: "All of the above",
-    q14: "Pointer manipulation",
-    q15: "new",
-    q16: "+",
-    q17: "start()",
-    q18: "LinkedHashSet",
-    q19: "try-catch",
-    q20: "final"
+    q1: "extends", q2: "main()", q3: "String", q4: "Overloading", q5: "final",
+    q6: "java.lang", q7: "false", q8: "Map", q9: "friendly", q10: "ArithmeticException",
+    q11: "break", q12: "equals()", q13: "All of the above", q14: "Pointer manipulation",
+    q15: "new", q16: "+", q17: "start()", q18: "LinkedHashSet", q19: "try-catch", q20: "final"
   };
  
+  // 🔹 Show slide and scroll to top
   function showSlide(n) {
     slides.forEach((slide, index) => {
       slide.style.display = index === n ? "block" : "none";
@@ -102,34 +94,69 @@ document.addEventListener("DOMContentLoaded", () => {
     prevBtn.style.display = n === 0 ? "none" : "inline-block";
     nextBtn.style.display = n === slides.length - 1 ? "none" : "inline-block";
     submitBtn.style.display = n === slides.length - 1 ? "inline-block" : "none";
+ 
+    // 👇 Scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
  
   prevBtn.addEventListener("click", () => {
-    if (currentSlide > 0) { currentSlide--; showSlide(currentSlide); }
+    if (currentSlide > 0) {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
   });
  
   nextBtn.addEventListener("click", () => {
-    if (currentSlide < slides.length - 1) { currentSlide++; showSlide(currentSlide); }
+    if (currentSlide < slides.length - 1) {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
   });
  
+  // 🔹 On quiz submit
   quizForm.addEventListener("submit", async (e) => {
     e.preventDefault();
  
     let score = 0;
+    let attempted = 0;
+    let correct = 0;
+    let incorrect = 0;
+ 
     for (const [q, ans] of Object.entries(correctAnswers)) {
       const userAnswer = quizForm.querySelector(`input[name="${q}"]:checked`);
-      if (userAnswer && userAnswer.value === ans) score++;
+      if (userAnswer) {
+        attempted++;
+        if (userAnswer.value === ans) {
+          score++;
+          correct++;
+        } else {
+          incorrect++;
+        }
+      }
     }
  
-    scoreValue.textContent = `${score} / 20`;
+    // 🧮 Build result summary with bold "Your Score"
+    const resultHTML = `
+      <h3 style="font-weight: 700;">Your Score: <span style="color: #28a745;">${score} / 20</span></h3>
+      <p><strong>Attempted Questions:</strong> ${attempted}</p>
+      <p><strong>Correct Answers:</strong> ${correct}</p>
+      <p><strong>Incorrect Answers:</strong> ${incorrect}</p>
+    `;
  
+    scoreValue.innerHTML = resultHTML;
+ 
+    // 🧾 Prepare data for API
     const userData = {
       fullName: quizForm.fullName.value,
       email: quizForm.email.value,
       mobile: quizForm.mobile.value,
-      score
+      score,
+      attempted,
+      correct,
+      incorrect
     };
  
+    // 🔹 Save score
     try {
       const response = await fetch("https://elearningbackend-production-9496.up.railway.app/api/quiz/submit", {
         method: "POST",
@@ -143,9 +170,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
  
     scoreModal.show();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
  
-  // 🔹 Make entire .form-check div clickable
+  // 🔹 Make entire .form-check clickable
   document.querySelectorAll(".form-check").forEach(option => {
     option.addEventListener("click", (e) => {
       if (e.target.tagName !== "INPUT") {
@@ -157,6 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
- 
 });
+ 
  
